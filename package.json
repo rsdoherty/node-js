@@ -4,6 +4,10 @@
     "description": "My Node.js App",
     "main": "app.js",
     "dependencies": {
-      "express": "^4.17.1"
+      "express": "^4.17.1",
+      "nodemon": "^3.0.1"
+    },
+    "scripts": {
+      "start": "nodemon src/app.js"
     }
   }

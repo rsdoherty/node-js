@@ -4,5 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    working_dir: /usr/src/app/src
+    entrypoint: nodemon -L app.js
     ports:
       - "3000:3000"
+    volumes:
+      - ./src:/usr/src/app/src

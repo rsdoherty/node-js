@@ -9,12 +9,14 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
-RUN npm install
+RUN npm install -g nodemon
 
-COPY . .
+RUN npm install && mv /usr/src/app/node_modules /node_modules
+
+COPY ./src /usr/src/app/src
 
 # Expose the port that the app will run on
 EXPOSE 3000
 
 # Command to start the app
-CMD [ "node", "app.js" ]
+CMD [ "node", "src/app.js" ]
