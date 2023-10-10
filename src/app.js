@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const path = require('path');
+const template_path = path.join(__dirname, 'templates');
 const loggingMiddleware = require('./helpers/logging')
 app.use(loggingMiddleware); // Use the logging middleware for all routes
+app.use(express.static(template_path));
 
 app.get('/', (req, res) => {
   const response = {

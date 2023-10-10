@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// Define routes for the 'bookshelf' module
+// Define routes for the 'crypto' module
 router.get('/', (req, res) => {
   const response = {
     module: 'crypto-api'

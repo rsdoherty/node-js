@@ -3,10 +3,7 @@ const router = express.Router();
 
 // Define routes for the 'bookshelf' module
 router.get('/', (req, res) => {
-  const response = {
-    module: 'crypto-ui'
-  };
-  res.json(response);
+  res.sendFile(template_path, 'crypto', 'index.html');
 });
 
 
