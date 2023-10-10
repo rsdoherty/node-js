@@ -34,7 +34,6 @@ moduleFolders.forEach(loadModuleRoutes);
 // Load Swagger
 const swaggerUi = require('swagger-ui-express');
 const specs = require('./swagger');
-console.log(JSON.stringify(specs, null, 4));
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Start application

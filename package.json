@@ -13,9 +13,44 @@
         "dev-start": "nodemon -L src/app.js",
         "start": "node src/app.js",
         "prettier-format": "prettier --write src/**/*.js",
-        "prettier-check": "prettier --check src/**/*.js"
+        "prettier-check": "prettier --check src/**/*.js",
+        "import-sort-format": "import-sort --write src/**/*.js",
+        "import-sort-check": "import-sort --l src/**/*.js",
+        "eslint-format": "eslint src/**/*.js --fix",
+        "eslint-check": "eslint src/**/*.js",
+        "lint": "npm run prettier-check && npm run import-sort-check && npm run eslint-check"
+    },
+    "importsort": {
+        ".js, .jsx, .ts, .tsx": {
+            "style": "eslint",
+            "parser": {
+                "babel": [
+                    ".js",
+                    ".jsx"
+                ],
+                "typescript": [
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
+    },
+    "eslintConfig": {
+        "env": {
+          "node": true
+        },
+        "parserOptions": {
+            "ecmaVersion": "latest"
+        },
+        "extends": "eslint:recommended",
+        "rules": {
+          "semi": ["error", "always"],
+          "quotes": ["error", "single"]
+        }
     },
     "devDependencies": {
+        "eslint": "^8.51.0",
+        "import-sort-cli": "^6.0.0",
         "prettier": "^3.0.3"
     }
 }
