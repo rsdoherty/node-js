@@ -6,5 +6,4 @@ router.get('/', (req, res) => {
   res.sendFile(template_path, 'crypto', 'index.html');
 });
 
-
 module.exports = router;

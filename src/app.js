@@ -3,13 +3,13 @@ const app = express();
 const fs = require('fs');
 const path = require('path');
 const template_path = path.join(__dirname, 'templates');
-const loggingMiddleware = require('./helpers/logging')
+const loggingMiddleware = require('./helpers/logging');
 app.use(loggingMiddleware); // Use the logging middleware for all routes
 app.use(express.static(template_path));
 
 app.get('/', (req, res) => {
   const response = {
-    message: 'Hello, World!'
+    message: 'Hello, World!',
   };
   res.json(response);
 });
@@ -24,9 +24,10 @@ const loadModuleRoutes = (moduleName) => {
 
 // Dynamically load routes from all modules
 const modulesPath = path.join(__dirname, 'modules');
-const moduleFolders = fs.readdirSync(modulesPath, { withFileTypes: true })
-  .filter(dirent => dirent.isDirectory())
-  .map(dirent => dirent.name);
+const moduleFolders = fs
+  .readdirSync(modulesPath, { withFileTypes: true })
+  .filter((dirent) => dirent.isDirectory())
+  .map((dirent) => dirent.name);
 
 moduleFolders.forEach(loadModuleRoutes);
 
