@@ -10,7 +10,8 @@
     "scripts": {
         "dev-start": "nodemon -L src/app.js",
         "start": "node src/app.js",
-        "format": "prettier --write src/**/*.js"
+        "prettier-format": "prettier --write src/**/*.js",
+        "prettier-check": "prettier --check src/**/*.js"
     },
     "devDependencies": {
         "prettier": "^3.0.3"
