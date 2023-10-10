@@ -13,9 +13,21 @@
         "dev-start": "nodemon -L src/app.js",
         "start": "node src/app.js",
         "prettier-format": "prettier --write src/**/*.js",
-        "prettier-check": "prettier --check src/**/*.js"
+        "prettier-check": "prettier --check src/**/*.js",
+        "import-sort-format": "import-sort --write src/**/*.js",
+        "import-sort-check": "import-sort --l src/**/*.js"
+    },
+    "importsort": {
+        ".js, .jsx, .ts, .tsx": {
+          "style": "eslint",
+          "parser": {
+            "babel": [".js", ".jsx"],
+            "typescript": [".ts", ".tsx"]
+          }
+        }
     },
     "devDependencies": {
+        "import-sort-cli": "^6.0.0",
         "prettier": "^3.0.3"
     }
 }
